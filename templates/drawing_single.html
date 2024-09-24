@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+{% extends "base_logged_in.html" %}
+{% block content %}
+<body onload="init()">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+                integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/drawing_single.js') }}"></script>
+<div class="not_allowed" id="not_allowed" style="display:none;">
+    <h1>Oops...</h1>
+    <h2>You must complete at least one level before you can play games!</h2>
+    <p><a href="{{ url_for('learn') }}"> GO TO LEVELS </a></p>
+</div>
+        <h1>Enter the correct character!</h1>
+        <p id="draw_message">...</p>
+        <center>
+            <canvas id="canvas" width="420" height="420">
+            </canvas>
+            <div id="incorrect_drawing" class="info-panel" style="display:none;">
+                <p>You drew the character incorrectly...</p>
+                <p>Here's a reminder of how to draw the character:</p>
+                    <img class="inc_animation" id="animation" src="">
+                <p>You got stroke(s) incorrect!</p>
+                <p>The neural network thought your drawing looked the most like: </p>
+
+
+            </div>
+        </center>
+<center>
+        <div class="one_line">
+        <input type="button" value="clear" id="clr" size="23" onclick="erase()">
+        <input type="button" id = 'submit' value="Submit" onclick="save()">
+        <input type="button" id="continue" value="Next" onclick="next()">
+    <h2 id="points">0 POINTS</h2>
+
+    </div>
+</center>
+
+    </body>
+{% endblock %}

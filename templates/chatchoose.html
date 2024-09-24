@@ -1,0 +1,13 @@
+{% extends "base_logged_in.html" %}
+{% block content %}
+
+<body>
+    <h1>Chat with...</h1>
+    {% for friend in friends %}
+    <div class="choosebutton">
+        <a href="{{ url_for('access_chat', parameter=friend[0]) }}">{{ friend[1] }}</a>
+    </div>
+    {% endfor %}
+</body>
+
+{% endblock %}

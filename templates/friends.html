@@ -1,0 +1,36 @@
+{% include "profile.html" %}
+
+{% block content %}
+<div>
+    <h1>FRIENDS</h1>
+    <div id="search_results">
+        <h2>FIND YOUR FRIENDS</h2>
+        <label for="request_name">Enter a username:</label>
+        <input type="text" id="request_name">
+        <input type="button" value="Search User!" onclick="make_request();">
+    </div>
+    <div id="request_results_list">
+        <h2>SEARCH RESULTS</h2>
+        <div class="user_element" id="request_results" style="display:none;">
+            <p class="searched_name"></p>
+            <input id="final_req" type="button" value="REQUEST" class="request_btn" onclick="final_request(this.id);">
+        </div>
+        <p>Can't find who you're looking for? search for their exact username!</p>
+    </div>
+    <div id="request_friends_list">
+        <h2>FRIEND REQUESTS</h2>
+        <div id="request_friend_element" class="request_friend_element" style="display:none;">
+            <p class="request_name">USERNAME</p>
+            <input id="reject_id" type="button" value="REJECT" class="reject_btn" onclick="reject_user(this.id);">
+            <input id="accept_id" type="button" value="ACCEPT" class="accept_btn" onclick="accept_user(this.id);">
+        </div>
+    </div>
+    <div id="friends_list">
+        <h2>YOUR FRIENDS</h2>
+        <div id="friend_element" class="friend_element" style="display:none;">
+            <p class="user_name">USERNAME</p>
+            <input id="friend_username" type="button" value="GO TO PROFILE" class="profile_btn" onclick="view_user(this.id);">
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base_logged_in.html" %}
+
+{% block content %}
+<script src="https://cdn.plot.ly/plotly-2.0.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+                integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/dictionary.js') }}"></script>
+
+
+<div>
+    <h2>DICTIONARY</h2>
+    <label for="word_box">Enter a word to search:</label>
+    <input type="text" id="word_box">
+    <input type="button" value="Find word!" onclick="find_word();">
+</div>
+<div id="search_results">
+    <div class="search_result_box" id="search_result_" style="display:none;">
+        <h2>Most common reading:</h2>
+        <h2 id="primary_"></h2>
+        <p id="secondary_"></p>
+        <p id="meaning_"></p>
+    </div>
+</div>
+{% endblock %}

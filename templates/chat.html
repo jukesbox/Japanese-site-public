@@ -1,0 +1,30 @@
+{% extends "base_logged_in.html" %}
+
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+                integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+<body>
+<center>
+    <div id="chat_container">
+            <div id="messages_container" class="chat_container">
+        <div id="your_message" class="message_line" style="display:none;">
+            <div class="messages your_message">
+                <p>hi</p>
+            </div>
+        </div>
+        <div id="other_message" class="message_line" style="display:none;">
+            <div class="messages other_message">
+                <p>hi</p>
+            </div>
+        </div>
+    </div>
+    <div class="sending_line">
+            <input class="mess_input" type="text" id="mess_input" placeholder="message...">
+            <input class="mess_button" type="button" value="Send!" onclick="send_message();">
+    </div>
+    </div>
+</center>
+</body>
+
+{% endblock %}

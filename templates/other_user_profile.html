@@ -1,0 +1,35 @@
+{% extends "base_logged_in.html" %}
+
+{% block content %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+                integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+<div>
+    <h1>{{ username }}'S PROGRESS</h1>
+    <div class="smallbox">
+        <p>POINTS</p>
+        <h1 id="points_holder"></h1>
+    </div>
+    <div class="smallbox">
+        <p>STREAK</p>
+        <h1 id="streak_holder"></h1>
+    </div>
+    <div class="widebox">
+        <p>AWARDS</p>
+        <p id="awards_holder"></p>
+    </div>
+    <div class="smallbox">
+        <p>CHARACTERS LEARNED</p>
+        <h1 id="character_holder"></h1>
+    </div>
+    <div class="widebox">
+        <p>NEXT STEPS</p>
+        <h1 id="next_steps_holder"></h1>
+    </div>
+    <div class="smallbox">
+        <p>QUESTIONS ANSWERED</p>
+        <h1 id="total_holder"></h1>
+    </div>
+</div>
+{% endblock %}

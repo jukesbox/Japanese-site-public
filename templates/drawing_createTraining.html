@@ -1,0 +1,34 @@
+<!-- that HTML template basically just has the navbar -->
+{% extends "base_logged_in.html" %}
+{% block content %}
+<body onload="init()">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+                integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/create_training.js') }}"></script>
+<div class="not_allowed" id="not_allowed" style="display:none;">
+    <h1>Oops...</h1>
+    <h2>You must complete at least one level before you can play games!</h2>
+    <p><a href="{{ url_for('learn') }}"> GO TO LEVELS </a></p>
+</div>
+        <h1>Train the Neural Network!</h1>
+        <!-- shows the 'draw the correct character for: []' message when the challenge is received -->
+        <p id="draw_message">...</p>
+    <!-- these are the canvases that are on the page - the styles are not in the css for now
+    so that I can just see it, but as soon as it works I will move it -->
+        <div style="text-align:center;">
+            <!-- The image with the template for drawing -->
+         <canvas id="image" width="420" height="420"
+           style="z-index: 0; position:relative; left:210px"></canvas>
+            <!-- the canvas that the user will draw on -->
+         <canvas id="canvas" width="420" height="420"
+           style="z-index: 1; position:relative; left:-219px"></canvas>
+        </div>
+    <!-- these are the buttons that need to be below the canvases -->
+    <!-- they are currently half behind the canvas -->
+    <div style="display:block;">
+        <input type="button" value="Clear" id="clr" size="23" onclick="erase()">
+        <input type="button" id ="submit" value="Submit" onclick="save()">
+        <input type="button" id="continue" value="Next" onclick="next()">
+    </div>
+    </body>
+{% endblock %}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+                integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+<body>
+    <center>
+        <div class="homepage">
+            <h1><b>Welcome to the site!</b></h1>
+    <p class="homepage">This site is here to help people learn Japanese Hiragana!</p>
+    <a class="homepage" href='/signup'>Sign up!</a>
+    <a class="homepage" href='/login'>Log in!</a>
+        </div>
+    <table id="leaderboard" style="width: 50%;">
+        <tr>
+            <th>Ranking</th>
+            <th>Username</th>
+            <th>Points</th>
+        </tr>
+    </table>
+    </center>
+{% endblock %}
+</body>

@@ -1,0 +1,40 @@
+{% include "profile.html" %}
+
+{% block content %}
+<div>
+    <h1>SETTINGS</h1>
+    <div class="setting-container">
+    <h2>YOUR DETAILS</h2>
+        <div class="input-box">
+            <label for="username">Username:</label><br/>
+            <input type="text" id="username">
+        </div>
+        <div class="input-box">
+            <label for="password">Password:</label><br/>
+            <input type="password" id="password">
+        </div>
+        <div class="input-box">
+            <label for="username">Email address:</label><br/>
+            <input type="text" id="email">
+        </div>
+        <div class="input-box">
+            <label for="c_password">Current Password:</label><br/>
+            <input type="password" id="c_password">
+        </div>
+    </div>
+    <div class="setting-container">
+    <h2>PREFERENCES</h2>
+        <p>Get emails for: </p>
+        <div id="emails-for">
+            <input type="checkbox" name="choice" value="reminders" id="reminder-choice">
+            <label for="reminder-choice">Reminders before you lose your streak!</label><br/>
+            <input type="checkbox" name="choice" value="info" id="info-choice">
+            <label for="info-choice">Information about ~stuff~!</label><br/>
+            <input type="checkbox" name="choice" value="promo" id="promo-choice">
+            <label for="promo-choice">Promotions from our services!</label><br/>
+        </div>
+    </div>
+    <p id="errors"></p>
+    <input type="button" value="SUBMIT CHANGES" onclick="setting_changes();">
+</div>
+{% endblock %}

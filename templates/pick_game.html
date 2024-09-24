@@ -1,0 +1,45 @@
+{% extends "base_logged_in.html" %}
+
+{% block content %}
+<h1>Multiplayer games</h1>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+<div class="halfscreen">
+    <p> PRIVATE GAMES </p>
+    <ul>
+        <!-- ((user_created_game(ID), user_created_game(TEXT), GameID(room), ), ...)-->
+    {% for game in private_games %}
+        {% set room_id = game.0 %}
+        {% set user_id = game.1 %}
+        {% set user_name = game.2 %}
+        <li><a href="{{ url_for('multi_drawing_access', parameter=room_id) }}">{{user_name}}'s Game</a></li>
+    {% endfor %}
+    </ul>
+    <a href="{{ url_for('make_new_game', parameter='True') }}">Create New Private Game</a>
+</div>
+<!-- now for the list of public games -->
+<div class="halfscreen">
+    <p> PUBLIC GAMES </p>
+        <ul>
+        <!-- ((user_created_game(ID), user_created_game(TEXT), GameID(room), ), ...)-->
+    {% for game in public_games %}
+            {% set room_id = game.0 %}
+            {% set user_id = game.1 %}
+            {% set user_name = game.2 %}
+
+
+        <li><a href="{{ url_for('multi_drawing_access', parameter=room_id) }}">{{user_name}}'s Game {{ room_id }}</a></li>
+    {% endfor %}
+    </ul>
+    <a href="{{ url_for('make_new_game', parameter='False') }}">Create New Public Game</a>
+</div>
+
+
+{% endblock %}

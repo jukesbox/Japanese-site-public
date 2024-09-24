@@ -1,0 +1,20 @@
+{% extends "base_logged_in.html" %}
+
+{% block content %}
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+                integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+<div>
+    <img class="profile" src="{{ url_for('static', filename='default.jpg')}} " alt="default image" width="200" height="200">
+    <h1 class="profile">{{ username }}</h1>
+</div>
+<div class="navbar profile">
+        <ul>
+            <li><a href="{{ url_for('your_progress') }}">Your progress</a></li>
+            <li><a href="{{ url_for('friend') }}">Friends</a></li>
+            <li><a href="{{ url_for('settings') }}">Settings</a></li>
+        </ul>
+    </div>
+</body>
+{% endblock %}

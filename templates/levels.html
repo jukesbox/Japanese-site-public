@@ -1,0 +1,50 @@
+{% extends "base_logged_in.html" %}
+
+{% block content %}
+<script src="https://cdn.plot.ly/plotly-2.0.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+                integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/levels.js') }}"></script>
+<div>
+    <h1>{{ level }}</h1>
+    <div>
+    <!-- INTRO TO LESSON -->
+    <p id="paragraph_1"></p>
+</div>
+<div class="audios" id="audios">
+    <h2>Listen to the sounds: </h2>
+    <a class="audio_card" id="audio" style="display:none;">
+        <h1 id="audio-char">a</h1>
+    </a>
+</div>
+<div class="para">
+    <p id="paragraph_2"></p>
+    <!-- FIRST BITS OF INFO -->
+</div>
+<div class="para">
+    <p id="paragraph_3"></p>
+</div>
+
+<div class="animations" id="animations">
+    <h2>These are the order of strokes: </h2>
+    <div class="animate_card" id="animate-card" style="display:none;">
+        <img class="animation" id="animation" src="" width="10%" height="10%">
+        <p></p>
+    </div>
+</div>
+<div class="para">
+    <p id="paragraph_4"></p>
+</div>
+<div class="para">
+    <p id="paragraph_5"></p>
+</div>
+<div class="input-box">
+    <input type="button" id="finished" value="Finished level!" onclick="finished_level();">
+</div>
+</div>
+<div id="recordings">
+    <audio id="audio-audio">
+        <source src="">
+    </audio>
+</div>
+{% endblock %}

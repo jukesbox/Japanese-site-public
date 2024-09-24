@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/myStyle.css')}}">
+</head>
+<body>
+      {% if title %}
+      <title> Japanese Website </title>
+      {% else %}
+      <title>Japanese Website</title>
+      {% endif %}
+        <div class="navbar top">
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('games') }}">Games</a></li>
+                <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                <li><a href="{{ url_for('learn') }}">Learn</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </div>
+        <hr>
+        {% block content %} {% endblock %}
+    </body>
+</html>

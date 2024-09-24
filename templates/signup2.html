@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+                integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/forms.js') }}"></script>
+<center>
+    <h1>SIGNUP</h1>
+    <div class="form-border">
+    <div id="usr-div" class="input-box">
+        <label for="usr">Username:</label><br>
+        <input type="text" id="usr" name="usr"><br>
+    </div>
+
+    <div id="email-div" class="input-box">
+        <label for="email"> Email:</label><br>
+        <input type="text" id="email" name="usr"><br>
+    </div>
+
+    <div id="password" class="input-box">
+        <label for="passwd">Password:</label><br>
+        <input type="password" id="passwd" name="passwd"><br>
+    </div>
+
+    <div id="c_password" class="input-box">
+        <label for="c_passwd">Confirm password:</label><br>
+        <input type="password" id="c_passwd" name="usr"><br>
+    </div>
+
+    <div class="input-box">
+        <p id="errors"></p>
+        <input type="button" id="signup" value="SIGN UP" onclick="signup();">
+    </div>
+</div>
+    <p><a href="{{ url_for('login') }}"> LOGIN INSTEAD </a></p>
+</center>
+
+
+{% endblock %}

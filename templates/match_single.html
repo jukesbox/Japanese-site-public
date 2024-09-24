@@ -1,0 +1,25 @@
+{% extends "base_logged_in.html" %}
+
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+                integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/matching-2.js') }}"></script>
+<body>
+<div class="not_allowed" id="not_allowed" style="display:none;">
+    <h1>Oops...</h1>
+    <h2>You must complete at least one level before you can play games!</h2>
+    <p><a href="{{ url_for('learn') }}"> GO TO LEVELS </a></p>
+</div>
+<h1>Match These Cards!</h1>
+<div id="matching">
+    <div id="card" style="display:none;">
+        <a class="match_card">
+            <h1>あ</h1>
+        </a>
+    </div>
+</div>
+<h2 id="result"></h2>
+<h2 id="points"></h2>
+</body>
+
+{% endblock %}

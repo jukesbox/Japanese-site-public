@@ -1,0 +1,553 @@
+@charset "UTF-8";
+* {
+    font-family: Helvetica, Ariel, sans-serif;
+    colour: #000;
+}
+
+h2 {
+    text-align: center;
+    margin: 40px;
+}
+
+p {
+    font-size: 20px;
+}
+a.homepage {
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #ff2215;
+    border: 2px solid #ff2215;
+    border-radius: 7px;
+}
+
+canvas {
+    border-radius: 10px;
+    border: 3px solid #ff2215;
+}
+
+/* when the user's mouse is hovering over the canvas */
+canvas:hover {
+    border: 3px solid #aa0000;
+}
+
+h1 {
+    font-size: 40px;
+    margin-top: 60px;
+}
+
+h1, p, img {
+    text-align: center;
+}
+
+a:hover {
+    background-color: #aa0000;
+
+}
+
+.homepage {
+    text-align: center;
+    font-size: 30px;
+}
+
+div.homepage a {
+    margin: 10px 40px;
+}
+
+div.homepage p {
+    padding: 30px 20px;
+}
+
+/* ----------------------------------------- navbar ---------------------------------------------- */
+
+div.navbar.top {
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+div.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ff2215;
+}
+
+div.navbar li {
+  float: left;
+}
+
+div.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+div.navbar li a:hover {
+  background-color: #aa0000;
+}
+
+div.sidenav ul {
+    left: 0;
+    top: 45px;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: #aa0000;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+
+}
+
+div.sidenav li a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 8px 16px;
+    background-color: #ff2215;
+}
+
+h1.username {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    color: black;
+    font-size: 30px;
+    text-align: center;
+    padding: 8px 16px;
+    background-color: #ffffff;
+}
+
+
+div.sidenav li a:hover {
+    background-color: #aa0000;
+}
+
+div.sidenav li a.active {
+    background-color: #aa0000;
+}
+
+div.w-side {
+    text-align: center;
+    margin-top: 40px;
+}
+
+img.profile {
+    float: left;
+    img-align: center;
+    border-radius: 50%;
+    border: 5px solid #555;
+
+}
+
+h1.profile {
+    font-size: 80px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+
+}
+
+div.widebox {
+    display: inline;
+    margin: 20px;
+    width: 50%;
+    height: 200px;
+    border-radius: 20px;
+    border: 3px solid #555;
+    float: left;
+    background-color: #ff9999;
+}
+
+div.smallbox {
+    display: inline;
+    margin: 20px;
+    width: 20%;
+    height: 200px;
+    border-radius: 20px;
+    border: 3px solid #555;
+    float: left;
+    background-color: #ff9999;
+}
+
+div.friends {
+    display: inline;
+    margin: 40px;
+    width: 42%;
+    border-radius: 20px;
+    border: 3px solid #555;
+    float: left;
+}
+
+div.choosebutton {
+    display: inline;
+    height: 80px;
+    border-radius: 20px;
+    float: centre;
+    margin: 40px;
+}
+
+div.topbutton {
+    margin: 40px;
+}
+
+div.choosebutton a {
+    text-decoration: none;
+    padding: 10px 16px;
+    color: #ffffff;
+    background-color: #ff2215;
+    border: 2px solid #ff2215;
+    border-radius: 7px;
+}
+
+div.choosebutton a:hover {
+    background-color: #aa0000;
+}
+
+div.halfscreen {
+    font-size: 30px;
+    text-align: center;
+    float: left;
+    width: 50%;
+}
+
+
+div.drawing-window {
+    text-align: center;
+}
+
+
+input[type=button], input[type=submit] {
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 5px;
+    border: 2px solid white;
+    background-color: #ff2215;
+
+}
+
+input[type=button]:hover, input[type=submit]:hover {
+    background-color: #aa0000;
+
+}
+
+div.window {
+    text-align: center;
+    margin-top: 40px;
+}
+
+div.levelbutton {
+    float: left;
+    font-size: 30px;
+    background-color: #ffffff;
+    colour: #ff2215;
+    border: 4px solid #ff2215;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 20px;
+
+}
+
+#overlay {
+      position: fixed;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 40;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255,255,255,0.8);
+      cursor: pointer;
+}
+
+
+div.not_friends {
+    text-align: center;
+
+}
+
+
+
+div.request_friend_element, div.friend_element {
+    display: inline;
+    margin: 20px;
+    width: 45%;
+    border-radius: 5px;
+    border: 3px solid #ff0000;
+    float: left;
+}
+
+div.user_element {
+    display: inline;
+    margin: 10px;
+    width: 22%;
+    border-radius: 5px;
+    border: 3px solid #ff0000;
+    float: left;
+}
+
+p.request_name, p.user_name, p.searched_name, input.accept_btn, input.reject_btn, input.request_btn {
+    display: inline;
+    font-size: 25px;
+
+}
+
+input.accept_btn, input.reject_btn, input.profile_btn, input.request_btn {
+    float: right;
+}
+
+input.accept_btn {
+    background-color: #00f000;
+}
+
+input.accept_btn:hover {
+    background-color: #00a000;
+}
+
+
+div.form-border {
+    text-align: center;
+    border: 2px solid #ff2215;
+    margin: 50px;
+    padding: 40px;
+    width: 400px;
+    border-radius: 7px;
+}
+
+div.setting-container {
+    text-align: center;
+    border: 2px solid #ff2215;
+    margin: 100px;
+    padding: 50px;
+    border-radius: 7px;
+}
+
+
+div.input-box {
+    text-align: center;
+
+}
+input[type=text], input[type=password] {
+    font-size: 20px;
+    border: 2px solid #ff2215;
+    margin: 20px;
+    border-radius: 7px;
+}
+
+
+
+label {
+    font-size: 20px;
+
+}
+
+#leaderboard {
+    width: 50%;
+    margin: 40px;
+}
+
+table, th, td {
+    border: 2px solid black;
+    font-size: 20px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th {
+background-color: #ff2215;
+color: white;
+}
+
+/* ============================== CARDS ================================ */
+
+a.match_card {
+    float: left;
+    display: inline;
+    border: 5px solid #ff2215;
+    margin: 20px 2%;
+    width: 15%;
+    height: 200px;
+    border-radius: 20px;
+
+}
+
+a.match_card:hover {
+    border: 5px solid #a1d8ff;
+    background-color: #a1d8ff;
+}
+
+a.disabled_selected {
+    float: left;
+    background-color: #a1d8ff;
+    display: inline;
+    border: 5px solid #a1d8ff;
+    margin: 20px 2%;
+    width: 15%;
+    height: 200px;
+    border-radius: 20px;
+
+}
+
+a.disabled_correct, a.disabled_correct:hover {
+    float: left;
+    display: inline;
+    border: 5px solid #00ff32;
+    background-color: #00ff32;
+    margin: 20px 2%;
+    width: 15%;
+    height: 200px;
+    border-radius: 20px;
+}
+
+div.forgot_stuff {
+    display: none;
+}
+
+div.one_line {
+    display: inline-block;
+    width: 100%;
+}
+
+div.search_result_box {
+    border: 2px solid #ff2215;
+    border-radius: 3px;
+    margin: 20px;
+    text-align: left;
+    float: left;
+    width: 25%;
+
+}
+
+div.chat_container {
+    margin: 80px;
+    border: 7px solid #abcabc;
+    float: center;
+    width: 60%;
+    height: 600px;
+    overflow:auto;
+    display:flex;
+    flex-direction:column-reverse;
+}
+
+div.messages {
+    border: 2px solid;
+    border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+div.message_line {
+    width: 100%
+    display: block;
+    height: 68px;
+
+}
+
+div.your_message {
+    display: block;
+    background-color: #ff2215;
+    border-color: #ff2215;
+    float: right;
+}
+
+div.other_message {
+    display: block;
+    background-color: #dbf2ff;
+    border-color: #dbf2ff;
+    float: left;
+}
+
+div.sending_line {
+    position: fixed;
+    bottom: 4px;
+}
+
+div.info_overlay {
+    float: center;
+    position: fixed;
+    border: 4px solid;
+    border-radius: 10px;
+    width: 40%;
+    height: 50%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+img.animation {
+    width: 250px;
+    height: 250px;
+    float: left;
+    display: block;
+    border: 4px solid;
+    border-radius: 10px;
+
+}
+
+img.inc_animation {
+    width: 100px;
+    height: 100px;
+    display: block;
+    border: 4px solid;
+    border-radius: 10px;
+
+}
+
+
+div.audios {
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 400px;
+}
+
+div.animate_card {
+    display: inline;
+    float: left;
+    text-align: center;
+    width: 50%;
+    height: 300px;
+
+}
+
+a.audio_card {
+    width: 15%;
+    height: 120px;
+    display: inline;
+    float: left;
+    border: 5px solid #ff2215;
+    margin: 20px 2%;
+    border-radius: 20px;
+}
+
+
+div.para {
+    display: block;
+}
+
+
+div.not_allowed {
+      position: fixed;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 40;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255,255,255, 0.8);
+      cursor: pointer;
+}
+
+div.info-panel {
+    border: 5px solid #ff2215;
+    border-radius: 10px;
+}

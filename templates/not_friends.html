@@ -1,0 +1,13 @@
+{% extends "base_logged_in.html" %}
+
+{% block content %}
+<body>
+<script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+<div class="not-friends">
+    <h1>You're not friends with this user...</h1>
+    <p>This is awkward...</p>
+    <input type="button" value='request friend' id="clr" onclick="request({{ userid }})">
+    <a href="{{ url_for('profile') }}"> Go to your profile</a>
+</div>
+</body>
+{% endblock %}

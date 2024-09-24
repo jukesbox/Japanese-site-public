@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+                integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/forms.js') }}"></script>
+<center>
+    <h1>Login</h1>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <div class="form-border">
+    <div id="usr-div" class="input-box">
+        <label for="usr">Username:</label><br>
+        <input type="text" id="usr" name="usr"><br>
+    </div>
+    <div id="password" class="input-box">
+        <label for="passwd">Password:</label><br>
+        <input type="password" id="passwd" name="passwd"><br>
+    </div>
+    <div class="input-box">
+        <p id="errors"></p>
+        <input type="button" id="login" value="LOGIN" onclick="login();">
+    </div>
+    <div class="input-box">
+    <input type="button" id="forgot" value="Forgot Password?" onclick="forgot();">
+    <div id="forgot_stuff" class="forgot_stuff">
+        <div id="pin" class="input-box">
+        <label for="enter_pin">Enter your one time pin:</label><br>
+        <input type="password" id="enter_pin" name="enter_pin"><br>
+    </div>
+    <div class="input-box">
+        <input type="button" id="login_pin" value="Login with pin" onclick="login_pin();">
+    </div>
+    </div>
+</div>
+        <p><a href="{{ url_for('signup') }}"> SIGN UP INSTEAD </a></p>
+</div>
+</center>
+
+
+{% endblock %}
